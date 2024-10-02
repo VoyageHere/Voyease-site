@@ -1,0 +1,80 @@
+.about_us {
+    padding: 1.5rem;
+    margin: auto;
+}
+
+.about_head {
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.about_head h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+#about_us .about_us_head {
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(../static/marble_bg.png);
+}
+
+#about_us .cards {
+    width: 80%;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 40px;
+}
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#about_us .cards .row .col {
+    display: flex;
+    justify-content: center;
+}
+
+#about_us .cards .row .col .card {
+    background: linear-gradient(#f8cdc3, #f2b6a9);
+    text-align: center;
+}
+
+#about_us .cards .row .col .card .card-header {
+    font-size: 20px;
+    font-weight: 800;
+    border-bottom: 0.5px solid rgb(159, 116, 116);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.download_app {
+    display: flex;
+    align-items: center;
+}
+
+.download_app_left {
+    width: 40%;
+    margin: auto;
+    padding: 80px;
+    text-align: justify;
+}
+
+.download_app_right {
+    display: flex;
+    justify-content: center;
+}
+
+.download_app h2 {
+    font-weight: 600;
+}
+
+.download_app p {
+    font-weight: 600;
+}

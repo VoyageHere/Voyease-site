@@ -1,0 +1,124 @@
+#contact_us .about_us_head {
+    height: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(../static/marble_bg.png);
+}
+
+.contact-form-inside {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 40px auto;
+  width: 90%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+.form-control {
+  border-radius: 20px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ee522e;
+}
+.btn-contact {
+  background-color: #ee522e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+.btn-contact:hover {
+  background-color: #d44a26;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  text-align: center;
+  width: 90%;
+}
+.contact-details .detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.contact-details .detail svg {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  fill: #ee522e;
+}
+#submitQueryModal button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#submitQueryModal .success {
+  color: #d44a26;
+  font-size: 34px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .contact-details {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+  }
+  .contact-form-inside {
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .contact-details {
+    width: 50%;
+  }
+  .contact-form-inside {
+    width: 90%;
+  }
+}
+/* 
+#contact_us .query .contact-details {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+    justify-content: space-around;
+    text-align: center;
+} */
+
+#contact_us .query .contact-details .address, .phone, .email {
+    text-align: center;
+}
+
+#contact_us .query .contact-details svg {
+    height: 30px;
+    width: 30px;
+}
+/* 
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+  }
+  .contact-form h2 {
+    margin-bottom: 20px;
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #ee522e;
+  }
+  .btn-contact {
+    background-color: #ee522e;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  .btn-contact:hover {
+    background-color: #d44a26;
+  } */

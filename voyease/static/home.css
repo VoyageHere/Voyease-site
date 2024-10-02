@@ -1,0 +1,258 @@
+body {
+    font-family: calibri;
+}
+
+#home {
+    width: 100%;
+    min-height: 80vh; /* Use min-height instead of height to allow for scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    background: url(../static/img/amit-gaur-nuCkCU1-IBE-unsplash.jpg) no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire div */
+    position: relative; /* Allows for positioning elements within this div */
+    overflow: auto; /* Enables scrolling if content exceeds the height */
+    padding: 20px; /* Optional: adds some padding for better spacing */
+}
+
+
+/* #home {
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background: url(../static/marble_bg.png);
+    background: url(../static/img/amit-gaur-nuCkCU1-IBE-unsplash.jpg)
+} */
+
+#home h1:first-of-type {
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Card styling */
+.search-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+/* Container for search input and button */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-icon {
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+    color: #7d7373;
+    margin-right: 5px;
+    z-index: 1;
+}
+
+/* Input field styling */
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Button styling */
+.search-button {
+    background-color: #ff4a00; /* Set button background color */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #e63b00; /* Darken button on hover */
+}
+
+.card-home {
+    width: 93%;
+    margin: auto;
+}
+
+#prev-button, #next-button {
+    background: black;
+}
+
+  .carousel-inner {
+    padding: 1em;
+    height: auto;
+    width: 90%;
+    margin: auto;
+  }
+  .card {
+    margin: 0 0.5em;
+    /* box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18); */
+    border: none;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #e1e1e1;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .card-buttons {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.download-btn, .book-now-btn {
+    background-color: rgb(255, 74, 0);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+  @media (min-width: 768px) {
+    .carousel-item {
+      margin-right: 0;
+      flex: 0 0 33.333333%;
+      display: block;
+    }
+    .carousel-inner {
+      display: flex;
+    }
+  }
+  .card .img-wrapper {
+      max-width: 100%;
+      /* height: 13em; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .card img {
+      max-height: 100%;
+  }
+  @media (max-width: 767px) {
+    .card .img-wrapper {
+      height: 17em;
+    }
+  }
+
+
+.footer a {
+    color: inherit;
+}
+
+.footer .footer-left {
+    border-right: 1px solid black;
+}
+
+.footer .voyease-logo {
+    border-bottom: 2px solid black;
+    padding: 0 30px 30px 0;
+}
+
+.footer .address-footer {
+    line-height: normal;
+    padding: 30px 30px 0 0;
+}
+
+.footer .footer-icons {
+    display: flex;
+}
+
+.footer-icons a {
+    padding: 0 15px 0 0;
+    color: inherit;
+}
+
+.footer .footer-middle {
+    display: flex;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-right .scroll-top {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.middle-left, .middle-right {
+    padding: 0 25px;
+}
+
+/* .footer-items {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+} */
+
+#home h1 {
+    font-weight: 700;
+}
+
+#home p {
+    font-size: larger;
+}
+
+#home a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#home h1 span {
+    color: #ee522e;
+}
+
+.icon-large {
+    font-size: 40px;
+}
+
+
+@media (max-width: 767px) { /* Adjust the max-width value based on your needs */
+    #home p {
+        font-size: large;
+    }
+    .footer-items {
+        width: 100%;
+    }
+    .icon-large {
+        font-size: 25px; /* Adjust the size as needed */
+    }
+}

@@ -1,0 +1,71 @@
+#neubar {
+    box-shadow: 4px 6px 12px rgba(0,0,0,0.4);
+    font-size: 17px;
+    font-weight: 700;
+    min-height: 16vh;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #000; /* Adjust font color here */
+  }
+
+  #downloadAppButton {
+    display: flex;
+  width: 178px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 13px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ee522e;
+  border-radius: 50px;
+  overflow: hidden;
+  }
+  
+  .nav-item .active {
+    border-radius: 6px;
+    /* background: #ee522e; */
+    padding-bottom: 2px; /* Adjust the space between text and underline */
+      border-bottom: 2px solid #ee522e; /* Adjust the underline thickness and color */
+      font-weight: bold;
+    /* background: #78635f;
+    box-shadow: none;
+    box-shadow:  4px 4px 8px #ef6f53,
+                 -4px -4px 8px #ef6f53; */
+  }
+  #neubar .dropdown-menu a:hover {
+    color: #454545
+  }
+  #neubar .nav-item {
+    margin : auto 4px;
+  }
+  #neubar a {
+  
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .navbar-brand img.logo {
+    width: auto; /* Ensure the width scales with the height */
+    height: 90px; /* Default height */
+  }
+
+  @media (max-width: 768px) {
+    .navbar-brand img.logo {
+        height: 60px; /* Adjust height for smaller screens */
+    }
+  }
+
+
+  #neubar .dropdown-menu {
+    background : #545454
+  }
+  a.navbar-brand {
+    color: #454545
+  }
+
+  main {
+    margin-top: 16vh;
+    overflow: hidden;
+  }

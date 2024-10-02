@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='icon.png') }}" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/navbar.css">
+    <link rel="stylesheet" href="../static/carousel.css">
+    <link rel="stylesheet" href="../static/home.css">
+    <link rel="stylesheet" href="../static/about_us.css">
+    <link rel="stylesheet" href="../static/contact_us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>{% block title %}VoyEase{% endblock %}</title>
+
+    <style>
+        .blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(50px);
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1040; /* Bootstrap modals use z-index 1050 by default */
+            display: none;
+        }
+        .blurred {
+            filter: blur(50px);
+        }
+        .modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            max-width: 700px;
+        }
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 2rem;
+        }
+        .modal-title {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .modal-content {
+            border-radius: 20px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-wrapper h4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white; /* Adjust color as needed */
+            font-size: 4rem; /* Adjust size as needed */
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: for better readability */
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* padding: 30px; */
+        }
+        .made-in-india {
+            padding: 0 20px;
+        }
+        .made-in-india img {
+            height: 60px;
+            width: 60px;
+            border-radius: 20%;
+        }
+        @media (max-width: 767px) {
+            .image-wrapper h4 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Your header content goes here -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="neubar">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="../static/logo.png" class=" logo" alt="Logo" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link mx-2 active" href="/#homepage">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="/#about_us_page">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="/#contact_us">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" id="downloadAppButton" href="#" data-bs-toggle="modal" data-bs-target="#downloadAppModal">Download App</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+        
+    </header>
+
+    <main role="main">
+        <!-- This is where the content of child pages will be inserted -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="container footer mt-5 py-3">
+
+        <div class="footer-left">
+            <div class="voyease-logo">
+                <a class="navbar-brand" href="#"><img src="../static/logo.png" class=" logo" alt="Logo" /></a>
+            </div>
+            <div class="address-footer">
+                <p><i class="fa-solid fa-location-dot"></i> Chowk, Varanasi, India</p>
+                <p><i class="fa-solid fa-envelope"></i> support@voyease.in</p>
+                <p><i class="fa-solid fa-phone-volume"></i> +91-6393106700, +91-7992433562</p>
+                <p><i class="fa-solid fa-globe"></i> www.VoyEase.in</p>
+            </div>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/profile.php?id=61559085701182" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/voyease?igsh=YzljYTk1ODg3Zg==" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/voyease" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://youtube.com/@voyease?feature=shared" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="middle-left">
+                <h3>Company</h3><br>
+                <p>Home</p>
+                <p>About Us</p>
+                <p>Contact Us</p>
+                <a href="/privacy_policy"><p>Privacy policy</p></a>
+            </div>
+            <div class="middle-right">
+                <h3>Links</h3><br>
+                <a href="/customer_tnc"><p>Customer terms and conditions</p></a>
+                <a href="/guide_and_buddy_tnc"><p>Tour guides Terms and Conditions</p></a>
+                <a href="/guide_and_buddy_tnc"><p>Tour buddies Terms and Conditions</p></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="scroll-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+            <div class="made-in-india">
+                <img src="../static/made-in-india.png" alt="">
+            </div>
+        </div>
+
+        <!-- Your footer content goes here -->
+        <!-- <div class="footer-items">
+        <div>
+            <div>
+                <a target="_blank" href="https://www.instagram.com/voyease/"><i class="fa fa-instagram icon-large" style="color:red"></i></a>
+                &nbsp;&nbsp;
+                <a target="_blank" href="https://www.linkedin.com/company/voyease/"><i class="fa fa-linkedin icon-large" style="color:blue"></i></a>
+            </div>
+            <span><b>Connect with us </b></span>
+        </div>
+        <div><span class="text-muted">© 2024 VoyEase. All rights reserved.</span></div>
+        <div class="made-in-india">
+            <img src="../static/made-in-india.png" alt="">
+        </div>
+    </div> -->
+    </footer>
+
+    <!-- Download App Modal -->
+    <div class="modal fade" id="downloadAppModal" tabindex="-1" aria-labelledby="downloadAppModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h4 class="modal-title" id="downloadAppModalLabel">Download Our App</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                <div class="modal-body">
+                    <!-- <img src="../static/img/sebastian-svenson-d2w-_1LJioQ-unsplash.jpg" alt="App Image"> -->
+                    <div class="image-wrapper">
+                        <h4 class="modal-title" id="downloadAppModalLabel">App Launching Soon !</h4>
+                        <img src="../static/img/sebastian-svenson-d2w-_1LJioQ-unsplash.jpg" alt="App Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blur-overlay" id="blurOverlay"></div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script> -->
+        <script src="https://kit.fontawesome.com/97e27a6bd2.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFzU5IuMYA2MQnIsN8QwJwX/47arwrX/Zz4xYGzt8t/47OtbE3p8F6Dja" crossorigin="anonymous">
+    </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    // Remove active class from all links
+                    navLinks.forEach(function (navLink) {
+                        navLink.classList.remove("active");
+                    });
+    
+                    // Add active class to the clicked link
+                    link.classList.add("active");
+                });
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                // const offset = 0; // Adjust the offset as needed
+                const offset = document.querySelector('#neubar').offsetHeight;
+                const targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
