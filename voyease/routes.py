@@ -17,7 +17,11 @@ def customer_tnc():
 
 @app.route('/guide_and_buddy_tnc')
 def guide_and_buddy_tnc():
-    return render_template('customers_tnc.html')
+    return render_template('guides_tnc.html')
+
+@app.route('/buddy_and_guide_tnc')
+def buddy_and_guide_tnc():
+    return render_template('buddies_tnc.html')
 
 @app.route('/submit-query', methods=['POST'])
 def submit_query():
